@@ -57,6 +57,8 @@ git add .
 
 git add somefile
 
+git add -p (only add some part of the file change)
+
 git reset
 
 ## commit
@@ -92,11 +94,17 @@ tracked - Unmodified (commited)
         - Modified (unsaved)
         - Staged (saved)
 
-For viewing change in Modified:
+### For viewing change in Modified:
 
 git diff
 
-For viewing change in Staged:
+### For viewing change in Staged:
 
 git diff --staged
+
+### For viewing change in Branch:
+
+git diff someBranchName
+
+- it compair the branch to the current branch I think...
 
