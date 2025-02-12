@@ -52,7 +52,7 @@ git config --global --unset user.name
 ## check status
 git status
 
-## modify git
+## modify
 git add .
 
 git add somefile
