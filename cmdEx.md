@@ -25,7 +25,7 @@ cd to the .git file
 
 ls and found the config file
 
-# Level
+## Level
 
 system -- the uppest level, for it there are muti user in the compter
 
@@ -59,4 +59,44 @@ git add somefile
 
 git reset
 
+## commit
+
+git commit -m "Fix Something"
+
+## branching
+
+we don't make change on the main branch usually.
+
+CREATE (not switching to that)
+
+git branch someBranchName
+
+CHECK (how many banches and what branch we are on)
+
+git branch -a
+
+SWITCH (to the branch)
+
+git checkout someBranchName
+
+CREATE + SWITCH TO (the new branch at the sametime) 
+
+git checkout -b someBranchName
+
+## Viewing Local Changes
+
+zone:
+
+untracked -- outside of .git
+tracked - Unmodified (commited)
+        - Modified (unsaved)
+        - Staged (saved)
+
+For viewing change in Modified:
+
+git diff
+
+For viewing change in Staged:
+
+git diff --staged
 
