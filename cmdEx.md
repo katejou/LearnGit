@@ -191,6 +191,8 @@ to do all the updates action.
 
 ## Branching 3
 
+If you have pushed somehting on to the remote branch:
+
 To delete a local branch that is already on remote sever，you have to delete the remote branch first.
 
 1. Lists remote branches
@@ -204,3 +206,32 @@ git push origin -d feature_branch
 3. delete the local branch, after merging it to main branch
 
 git branch -d feature_branch 
+
+## Pull
+
+1. From zero to one
+
+git clone <http://....git>
+
+2. update from others (saved on the remote)
+
+git pull
+
+pull = fetch + merge
+
+3. What if I do fetch instead of pull
+
+git fetch
+
+git status (show my local branch is behind)
+
+git diff main origin/main
+(
+    main = local main branch
+    origin/main = remote main branch
+)
+
+git pull 
+(to merge the remote branch after comfrim everything looks OK)
+
+
