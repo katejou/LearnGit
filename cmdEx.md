@@ -185,6 +185,8 @@ git push -u origin feature
 
 and later we can use:
 
-git push feature
+git push 
 
--> to update the feature branch
+to do all the updates action.
+
+--------------
