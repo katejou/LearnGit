@@ -148,7 +148,9 @@ So that we can work with others in the same project using Git.
 
 2. Check my existing remotes (connection of the repo)
 
-git remote -v
+git remote      -> should show remote_name
+
+git remote -v   -> show details includ url, both the push and fetch(/pull)
 
 3. Add or Reset Remote
 
@@ -175,3 +177,14 @@ This is important because it allows you to use simpler commands like 'git pull' 
 You only need to use -u the 'first time' you push a new branch to the remote.
 
 
+e.g the remote only have a main branch, but we want to push a new feature branch to it.
+
+git push -u origin feature
+
+-> so the feature branch is built to the remote(which call origin)
+
+and later we can use:
+
+git push feature
+
+-> to update the feature branch
