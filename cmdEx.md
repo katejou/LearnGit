@@ -65,7 +65,7 @@ git reset
 
 git commit -m "Fix Something"
 
-## branching
+## Branching 1
 
 we don't make change on the main branch usually.
 
@@ -107,4 +107,71 @@ git diff --staged
 git diff someBranchName
 
 - it compair the branch to the current branch I think...
+
+## Merge
+
+1. Switch to the branch that falls behind， that we want to merge changes into there.
+2. CMD
+
+git merge featureBranchName -m "someMessage"
+
+3. merge is also a commit, so better type message.
+4. there are merge strategies, 'ort' is the default one.
+5. 'HEAD' is where the current newest step we are working in.
+
+
+## Log
+
+git log
+
+(remember to quit by :q, hitting q)
+
+git log --oneline
+
+git log --oneline --graph
+
+(we can see the merging realationship on the branch more easily by that, and we can delete unused branch after merge.)
+
+## Branching 2
+
+DELETE
+
+git branch -d someBranchName
+
+(after the delete, the branch names won't show on the log graph anymore)
+
+## Put it on Severs/ Platform (remote)
+
+So that we can work with others in the same project using Git.
+
+1. Open a repo on that platfrom (Github)
+
+2. Check my existing remotes (connection of the repo)
+
+git remote -v
+
+3. Add or Reset Remote
+
+git remote add <remote_name> <new_url>
+
+git remote set-url <remote_name> <new_url>
+
+4. Make sure of the branch name
+
+git branch -M main
+
+5. Push
+
+(remember to check if you have already add and commited all)
+
+git push -u <remote_name> <branch_name>
+
+git push -u origin main
+
+-u: This is a shortcut for --set-upstream.  
+It establishes a tracking connection between your local branch (in this case, main) and the remote branch (main on origin).  
+This is important because it allows you to use simpler commands like 'git pull' and 'git push' in the future without having to specify the remote and branch every time.  
+
+You only need to use -u the 'first time' you push a new branch to the remote.
+
 
