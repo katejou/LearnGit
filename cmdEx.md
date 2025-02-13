@@ -189,4 +189,16 @@ git push
 
 to do all the updates action.
 
-+++try+++++try+++++++
+## Branching 3
+
+To delete a local branch that is already on remote sever，you have to delete the remote branch first.
+
+1. Lists remote branches
+git branch -r 
+
+2. Or git push origin --delete feature_branch
+git push origin -d feature_branch  
+
+3. delete the local branch, after merging it to main branch
+
+git branch -d feature_branch 
