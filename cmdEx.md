@@ -256,7 +256,7 @@ when I have two branch on local, I want to merge them into one.
 main:        c1 c2
 feature:     c3 c4
 
-I am on main branch, and I run: git rebase main
+I am on feature branch, and I run: git rebase main
 
 main: c1 c2 c3 c4(feature)
 
