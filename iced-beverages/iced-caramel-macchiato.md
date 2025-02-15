@@ -31,5 +31,3 @@
 ### Step 5
 
 - Top with caramel sauce.
-
-I do sth on f2

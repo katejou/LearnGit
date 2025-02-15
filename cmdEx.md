@@ -251,22 +251,32 @@ so thats call the 3 way, in graph it looks like a Y fork have closed.
 only use on local branching before pushing the branch to remote.
 to keep a linear line, and make other easy to understand.
 
+1. make a feature branch from main as usual, change a little and commit（f1）
+2. make a little change to main branch, but not conflict to feature branch, than commit.(f2)
+3. go to feature branch: git rebase main
+4. the history of the feature branch will be changed, showing the (f2) happened before (f1) on this feature branch.
+5. when go back to the main branch, nothing was affected, f1 still didn't exist in there.
+6. on main brach: git merge feature
+7. the merge will keep a straight line (and that's the whole point!)
+8. you can delete the feature branch a push the main branch to remote 
+
+
 when I have two branch on local, I want to merge them into one.
 
-main:        c1 c2
-feature:     c3 c4
+main:        f2
+feature:     f1
 
 I am on feature branch, and I run: git rebase main
 
-main: c1 c2 c3 c4(feature)
+main: f2 f1(feature)
 
-I am not sure about if the feature branch is deleted ? <--
+It is not simply change the history f2, it clone a new f2, and delete the original one.
+Their hash ID are not the same.  
 
-But it simply change the history of the fork, 
-it make it seems like c3 and c4 were happened after c1 and c2.
-And It look like I have never fork any branch to myself.
+Don't do rebase after push the branch to remote because it might change other's history. And cause conflict. （other's people computer have an other version of history）
 
-Don't do rebase after push the branch to remote because it might change other's history. And cause conflict.
+--
+I think this is useful the pull the new main branch before rebase/merge a feature branch. Your group memeber maybe fixed something while you are working on your own feature branch.
 
 ## undo
 
