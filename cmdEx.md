@@ -272,7 +272,3 @@ Don't do rebase after push the branch to remote because it might change other's 
 
 undo
 
-<<<<<<< HEAD
-r2 -r5 --r6
-=======
->>>>>>> learnRebaseBranch
