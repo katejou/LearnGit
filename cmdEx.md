@@ -235,3 +235,39 @@ git pull
 (to merge the remote branch after comfrim everything looks OK)
 
 
+## Merge
+
+Linear merge (main branch fall behind but stay the same, so it just catching up with the feature.)
+
+3 way merge (main branch have a bit diffrent from feature, but they still can merge to together.
+1. the split 
+2. the main branch commit
+3. the feature branch commit
+so thats call the 3 way, in graph it looks like a Y fork have closed.
+)
+
+## Advance Merge -- Rebase
+
+only use on local branching before pushing the branch to remote.
+to keep a linear line, and make other easy to understand.
+
+when I have two branch on local, I want to merge them into one.
+
+main:        c1 c2
+feature:     c3 c4
+
+I am on main branch, and I run: git rebase main
+
+main: c1 c2 c3 c4(feature)
+
+I am not sure about if the feature branch is deleted ? <--
+
+But it simply change the history of the fork, 
+it make it seems like c3 and c4 were happened after c1 and c2.
+And It look like I have never fork any branch to myself.
+
+Don't do rebase after push the branch to remote because it might change other's history. And cause conflict.
+
+## undo
+
+undo
