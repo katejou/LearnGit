@@ -272,4 +272,4 @@ Don't do rebase after push the branch to remote because it might change other's 
 
 undo
 
-r2 r3 r4
+r2 r3 r4 --r7
