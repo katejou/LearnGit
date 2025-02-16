@@ -374,9 +374,21 @@ $ git reflog
 This can let us found the hash commit ID which we 'reset hard' on.
 That ID could save what have been throw away.
 
-$ git cherry-pick 11ff211
+$ git cherry-pick 723e41e
 
-11ff211 is an example
+723e41e is an example
+
+1. commit [4a05afd]
+2. commit [723e41e]
+3. git reset --hard 4a05afd
+4. the second commit and all its changes is gone
+5. git cherry-pick 723e41e
+6. the second commit and all its changes is back
+7. Yet the lastest commit ID is changed (check by log or reflog)
+
+cherry-pick can recover commits that happen long ago.
+but that commit must not conflict to all the files fight now.
+which is very difficult and rare in use case.
 
 
 
