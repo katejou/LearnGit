@@ -277,8 +277,72 @@ Don't do rebase after push the branch to remote because it might change other's 
 
 --
 I think this is useful the pull the new main branch before rebase/merge a feature branch. Your group memeber maybe fixed something while you are working on your own feature branch.
+--
 
-## undo
+## Merge Conflict
 
-undo
+1. when other change the main branch and push to remote
+2. when you change the same thing on you local feature branch
+3. you pull the main branch from remote to local main branch
+4. you try to merge your feature brach to main branch
+5. error message shown, to see more detail: git status
+6. locate and open the file, depend on what editor you use, fix the conflict.
+7. git add and commit this version, (, delete the feature branch?) then push.
+
+## Reduce Conflict
+
+1. Standardize Formatting Rules
+2. Small and Frequent Commits(So that you version won't be too diffrent than others)
+3. Communicate and Pay Attention
+
+## Extra
+1. to create a quick loop of commits
+:for d in {1..6}; do touch "file${d}.md"; git add "file${d}.md"; git commit -m "adding file ${d}"; done
+
+## Amend
+
+git commit --amend
+
+This cmd can fix the commit where the HEAD is pointing to
+1. git log --oneline
+(To check the Head pointer)
+2. git commit --amend
+(
+    Open a editor
+i= interactive mode
+
+By that, you change the first line, which is the commit message, or anything you can see in there.
+
+esc to jump out of the mode
+:wq = save the writing and quit
+)
+
+3. git log --oneline
+
+you can see the commit meassge is changed so as the hash ID
+
+4. And this amend do not affect the remote at all! Non of you teammates needs to know about it!
+
+## Reset
+
+1. git reset --soft 
+(committed > saved)
+
+git reset --soft HEAD~2
+git reset --soft <commit_ID>
+
+2. git reset --mixed
+(committed > unsaved)
+
+3. git reset --hard
+(committed > deleted all changes)
+
+
+
+
+
+
+
+
+
 
