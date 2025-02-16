@@ -328,16 +328,25 @@ you can see the commit meassge is changed so as the hash ID
 1. git reset --soft 
 (committed > saved)
 
-git reset --soft HEAD~2
-git reset --soft <commit_ID>
+$ git reset --soft HEAD~2 (the number is the step you take)
+or
+$ git reset --soft dcffa44 (the hash commit ID is found by git log --oneline)
+(and it will reture to that step on commit, so it won't work if you type the last step.)
 
 2. git reset --mixed
 (committed > unsaved)
 
+Because it is the default mode of reset, just type:
+$ git reset HEAD~2 (the number is the step you take)
+
 3. git reset --hard
 (committed > deleted all changes)
 
+Becareful!! 
+It really just wipe out everything you have made before that point!
 
+$ git reset --hard 11ff211
+(when I try this, it was the ID of 'adding file 1', and then it wipe out file2-7, and all the changes I have made in this file)
 
 
 
