@@ -52,6 +52,8 @@ git config --global --unset user.name
 ## check status
 git status
 
+If you are in a middle of a failing merge / cherry-pic /etc and you need to abort it. You can find the solution here.
+
 ## modify
 git add .
 
@@ -306,22 +308,33 @@ git commit --amend
 This cmd can fix the commit where the HEAD is pointing to
 1. git log --oneline
 (To check the Head pointer)
+
 2. git commit --amend
 (
-    Open a editor
-i= interactive mode
+It will Open a vim editor
+
+Hit 'i'
+i= insert mode (a --INSERT-- will show on the bottom)
 
 By that, you change the first line, which is the commit message, or anything you can see in there.
 
-esc to jump out of the mode
+Hit'esc' to jump out of the insert mode
+Hit ':' to input instruction, type 'wq'.
+
 :wq = save the writing and quit
+
 )
 
 3. git log --oneline
 
 you can see the commit meassge is changed so as the hash ID
 
-4. And this amend do not affect the remote at all! Non of you teammates needs to know about it!
+use pipe head to show only the last 10
+
+$ git log --oneline | head
+
+
+4. And this amend do not affect the remote at all! None of you teammates needs to know about it!
 
 ## Reset
 
@@ -342,12 +355,28 @@ $ git reset HEAD~2 (the number is the step you take)
 3. git reset --hard
 (committed > deleted all changes)
 
-Becareful!! 
+Becareful!! Don't use that, I have been a victim right now!
 It really just wipe out everything you have made before that point!
 
 $ git reset --hard 11ff211
-(when I try this, it was the ID of 'adding file 1', and then it wipe out file2-7, and all the changes I have made in this file)
 
+(when I try this, 11ff211 was the ID of 'adding file 1', and then it wipe out 'adding file2-7', and all the changes I have made to this notes in between)
+
+$git reset --hard Head~1
+
+
+## Reflog & Cherry-pick
+
+Reflog track where Head has been on local, within 90 days.
+
+$ git reflog
+
+This can let us found the hash commit ID which we 'reset hard' on.
+That ID could save what have been throw away.
+
+$ git cherry-pick 11ff211
+
+11ff211 is an example
 
 
 
