@@ -391,8 +391,33 @@ but that commit must not conflict to all the files fight now.
 which is very difficult and rare in use case.
 
 
+# Popular Team Workflows
 
+1. Basic
+only one main branch, usually a solo project.
 
+2. Feature Branch
 
+Main > many feature branch
 
+good for CICD
+bad for having too many version and branches, too confusing
 
+(release brach, deployment branch, production environment, testing environment...)
+
+3. Git Flow
+most common in larger teams
+
+Main > Develop > many Feature branch
+
+Develop branch is one more layer of testing and review, between feature and main.
+
+In case features don't work well together.
+
+With develop branch, the main branch can have a cleaner records of commits.
+
+Bad for slow process of reviews.
+May create for merge conflicts for more branches to begin with.
+And therefore need more communitcation.
+
+# Go to CourseResources.md for more
